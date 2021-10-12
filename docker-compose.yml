@@ -1,0 +1,44 @@
+version: '3.7'
+
+services: 
+  mongo: 
+    image: mongo
+    restart: always
+    expose:
+      - "27017"
+    ports: 
+      - "4505:27017"
+    networks:
+      - apinet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $MONGO_INITDB_ROOT_USERNAME_VAR
+      MONGO_INITDB_ROOT_PASSWORD: $MONGO_INITDB_ROOT_PASSWORD_VAR
+    volumes:
+      - mongo-volume:/data/db
+  ng:
+    container_name: ng
+    build: 
+      context: .
+      dockerfile: Dockerfile_angular
+    ports:
+      - "8080:80"
+    networks:
+      - apinet
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile_flask
+    ports:
+      - '8888:8888'
+    environment: 
+      MONGODB_URI: $MONGODB_URI_VAR
+    networks:
+      - apinet
+
+
+
+networks:
+  apinet:
+volumes:
+  mongo-volume:

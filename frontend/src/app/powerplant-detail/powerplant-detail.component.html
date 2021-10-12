@@ -1,0 +1,25 @@
+<div *ngIf="powerplant">
+
+    <h2>{{powerplant.name | uppercase}} Details</h2>
+    <div>
+      <label>Power plant name: </label>
+      <input [(ngModel)]="powerplant.name">
+    </div>
+    <div>
+      <label>Type ('gasfired', 'turbojet', 'windturbine'): </label>
+      <input [(ngModel)]="powerplant.type">
+    </div>
+    <div>
+      <label>Efficiency (0-1): </label>
+      <input [(ngModel)]="powerplant.efficiency">
+    </div>
+    <div>
+      <label>Minimum power (Pmin): </label>
+      <input [(ngModel)]="powerplant.pmin">
+    </div>
+    <div>
+      <label>Maximum power (Pmax): </label>
+      <input [(ngModel)]="powerplant.pmax">
+    </div>
+  
+  </div>

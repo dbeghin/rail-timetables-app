@@ -22,11 +22,11 @@ class PowerPlant:
     def checkPower(self, power, wind_pc):
         allowed = False
 
-        if self.ttype == "windturbine":
+        if self.ttype == "windturbine" or self.ttype == "wind":
             wind_power = self.pmax * wind_pc/100
             if round(power, 1) == round(wind_power, 1):
                 allowed = True
-        elif (self.ttype == "gasfired" or self.ttype == "turbojet"):
+        elif (self.ttype == "gasfired" or self.ttype == "gas" or self.ttype == "turbojet" or self.ttype == "kerosine"):
             if round(power, 1) <= self.pmax and round(power, 1) >= self.pmin:
                 allowed = True
         else:
@@ -49,11 +49,11 @@ class PowerPlant:
 
     def costPerMWh(self, gas_price, kerosine_price):
         fuel_price = 0
-        if self.ttype == "windturbine":
+        if self.ttype == "windturbine" or self.ttype == "wind":
             fuel_price = 0
-        elif self.ttype == "gasfired":
+        elif self.ttype == "gasfired" or self.ttype == "gas":
             fuel_price = gas_price
-        elif self.ttype == "turbojet":
+        elif self.ttype == "turbojet" or self.ttype == "kerosine":
             fuel_price = kerosine_price
         else:
             pass #raise error
@@ -66,10 +66,10 @@ class PowerPlant:
 
 
     def getRange(self, wind_pc):
-        if self.ttype == "windturbine":
+        if self.ttype == "windturbine" or self.ttype == "wind":
             min_power = round(self.pmax * wind_pc/100, 1)
             max_power = min_power
-        elif (self.ttype == "gasfired" or self.ttype == "turbojet"):
+        elif (self.ttype == "gasfired" or self.ttype == "gas" or self.ttype == "turbojet" or self.ttype == "kerosine"):
             min_power = round(self.pmin, 1)
             max_power = round(self.pmax, 1)
         else:

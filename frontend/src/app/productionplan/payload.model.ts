@@ -2,12 +2,12 @@ export class Fuels {
     public gas: number;
     public kerosine: number;
     public co2: number;
-    public wind: number=0;
+    public wind: number;
     constructor() {
-        this.gas=10;
-        this.kerosine=20;
+        this.gas=13.4;
+        this.kerosine=133.5;
         this.co2=0;
-        this.wind=60;
+        this.wind=100;
     }
 }
 
@@ -22,7 +22,7 @@ export class Powerplant {
         this.type="default";
         this.efficiency=0.5;
         this.pmin=0;
-        this.pmax=0;
+        this.pmax=100;
     }
 }
 
@@ -31,7 +31,7 @@ export class Payload {
     public fuels: Fuels;
     public powerplants: Powerplant[];
     constructor() {
-        this.load=200;
+        this.load=721;
         this.fuels= new Fuels();
         this.powerplants= [new Powerplant()];
      }

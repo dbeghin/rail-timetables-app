@@ -47,39 +47,54 @@
   <br>
   <div>
     <label><b>Fuels:</b> </label>
-    <div>
-      <label>Gas (euro/MWh): </label>
-      <input [(ngModel)]="payload.fuels.gas" />
-    </div>
-    <div>
-      <label>Kerosine (euro/MWh): </label>
-      <input [(ngModel)]="payload.fuels.kerosine" />
-    </div>
-    <div>
-      <label>Wind (%): </label>
-      <input [(ngModel)]="payload.fuels.wind" />
-    </div>
+    <table class='table'>
+      <tbody>
+        <tr>
+          <td><label>Gas (euro/MWh): </label></td>
+          <td><input class="app-form" [(ngModel)]="payload.fuels.gas"></td>
+        </tr>
+        <tr>
+          <td><label>Kerosine (euro/MWh): </label></td>
+          <td><input class="app-form" [(ngModel)]="payload.fuels.kerosine"></td>
+        </tr>
+        <tr>
+          <td><label>Wind (%): </label></td>
+          <td><input class="app-form" [(ngModel)]="payload.fuels.wind"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <h2>Added power plants</h2>
+  <h2>Create power plants</h2>
 
+  <p>Click below to create a new <b>gas</b>, <b>kerosine</b>, or <b>wind</b> power plant.</p>
   <div>
-    <button (click)="addPowerplant()">Create new power plant with default values</button>
+    <button class="app-button" (click)="addPowerplant('gas')">Gas</button>
+    &nbsp;
+    <button class="app-button" (click)="addPowerplant('kerosine')">Kerosine</button>
+    &nbsp;
+    <button class="app-button" (click)="addPowerplant('wind')">Wind</button>
   </div>
 
-  <p><b>Click on existing power plant to change it</b></p>
+  <p>Click on existing power plant to <b>change</b> or <b>remove</b> it</p>
 
   <ul class="powerplants">
     <li *ngFor="let powerplant of powerplants"
       [class.selected]="powerplant === selectedPowerplant"
       (click)="onSelect(powerplant)">
-      <span class="badge">{{powerplant.type}}</span> {{powerplant.name}}
+        <span class="badge">{{powerplant.type}}</span>
+        {{powerplant.name}}
     </li>
   </ul>
 
 
   <app-powerplant-detail [powerplant]="selectedPowerplant"></app-powerplant-detail>
-  <button *ngIf="selectedPowerplant" (click)="savePowerplant()">save selected power plant</button>
+  <br>
+  <div *ngIf="selectedPowerplant">
+    <button (click)="savePowerplant()">Unselect power plant</button>
+    &nbsp;
+    <button (click)="deletePowerplant(selectedPowerplant)">Remove selected powerplant</button>
+  </div>
 
   
 </div>

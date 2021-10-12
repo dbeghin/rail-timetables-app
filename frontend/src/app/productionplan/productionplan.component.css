@@ -8,6 +8,7 @@
     cursor: pointer;
     position: relative;
     left: 0;
+    right: 0;
     background-color: #EEE;
     margin: .5em;
     padding: .3em 0;
@@ -39,13 +40,23 @@
     background-color:#405061;
     line-height: 1em;
     position: relative;
+    width: 3.8em;
     left: -1px;
     top: -4px;
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  
+     
   input {
     padding: .5rem;
   }
+
+.app-button{
+  width: 7em;
+
+}
+
+.app-form{
+  width: 50px;
+}

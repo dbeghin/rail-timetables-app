@@ -1,25 +1,30 @@
 <div *ngIf="powerplant">
 
     <h2>{{powerplant.name | uppercase}} Details</h2>
-    <div>
-      <label>Power plant name: </label>
-      <input [(ngModel)]="powerplant.name">
-    </div>
-    <div>
-      <label>Type ('gasfired', 'turbojet', 'windturbine'): </label>
-      <input [(ngModel)]="powerplant.type">
-    </div>
-    <div>
-      <label>Efficiency (0-1): </label>
-      <input [(ngModel)]="powerplant.efficiency">
-    </div>
-    <div>
-      <label>Minimum power (Pmin): </label>
-      <input [(ngModel)]="powerplant.pmin">
-    </div>
-    <div>
-      <label>Maximum power (Pmax): </label>
-      <input [(ngModel)]="powerplant.pmax">
-    </div>
+    <table class='table'>
+      <tbody>
+        <tr>
+          <td><label>Power plant name: </label></td>
+          <td><input class="app-form" [(ngModel)]="powerplant.name"></td>
+        </tr>
+        <tr>
+          <td><label>Type: </label></td>
+          <td><input class="app-form" [(ngModel)]="powerplant.type"></td>
+        </tr>
+        <tr>
+          <td><label>Efficiency (0-1): </label></td>
+          <td><input class="app-form" [(ngModel)]="powerplant.efficiency"></td>
+        </tr>
+        <tr>
+          <td><label>Minimum power (Pmin): </label></td>
+          <td><input class="app-form" [(ngModel)]="powerplant.pmin"></td>
+        </tr>
+        <tr>
+          <td><label>Maximum power (Pmax): </label></td>
+          <td><input class="app-form" [(ngModel)]="powerplant.pmax"></td>
+        </tr>
+      </tbody>
+    </table>
+
   
   </div>

@@ -707,3 +707,43 @@ INFO: Found no straightforward solution, brute forcing.
 INFO: Solution total cost: 143429.76
 INFO: Solution details by cost tier: [{'load': 90.0, 'cost': 0.0}, {'load': 245.0, 'cost': 8873.9}, {'load': 26.0, 'cost': 1055.86}, {'load': 300.0, 'cost': 133500.0}]
 INFO: 127.0.0.1 - - [12/Oct/2021 18:45:42] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [12/Oct/2021 18:47:14] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[[21.6, 21.6], [25.0, 30.0], [46.6, 60.0], [71.6, 90.0], [96.6, 111.6], [115.0, 120.0], [136.6, 150.0], [161.6, 180.0], [186.6, 201.6], [235.0, 245.0], [256.6, 275.0], [281.6, 2046.6]]'
+INFO: Found no straightforward solution, brute forcing.
+INFO: Solution total cost: 145866.36
+INFO: Solution details by cost tier: [{'load': 90.0, 'cost': 0.0}, {'load': 245.0, 'cost': 8873.9}, {'load': 86.0, 'cost': 3492.46}, {'load': 300.0, 'cost': 133500.0}]
+INFO: 127.0.0.1 - - [12/Oct/2021 18:47:14] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [13/Oct/2021 16:10:16] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[[0.0, 16.0], [36.0, 1332.0]]'
+INFO: Found straightforward solution.
+INFO: Solution total cost: 13524.8
+INFO: Solution details by cost tier: [{'load': 186.0, 'cost': 0.0}, {'load': 535.0, 'cost': 13524.8}, {'load': 0, 'cost': 0}, {'load': 0, 'cost': 0}]
+INFO: 127.0.0.1 - - [13/Oct/2021 16:10:16] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [13/Oct/2021 16:12:19] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[[0.0, 1532.0]]'
+INFO: Found straightforward solution.
+INFO: Solution total cost: 13524.8
+INFO: Solution details by cost tier: [{'load': 186.0, 'cost': 0.0}, {'load': 535.0, 'cost': 13524.8}, {'load': 0, 'cost': 0}, {'load': 0, 'cost': 0}, {'load': 0, 'cost': 0}, {'load': 0, 'cost': 0}]
+INFO: 127.0.0.1 - - [13/Oct/2021 16:12:19] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [13/Oct/2021 16:27:55] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[[21.6, 21.6], [25.0, 30.0], [46.6, 60.0], [71.6, 90.0], [96.6, 111.6], [115.0, 120.0], [136.6, 150.0], [161.6, 180.0], [186.6, 201.6], [235.0, 245.0], [256.6, 275.0], [281.6, 2046.6]]'
+INFO: Found no straightforward solution, brute forcing.
+INFO: Solution total cost: 145866.36
+INFO: Solution details by cost tier: [{'load': 90.0, 'cost': 0.0}, {'load': 245.0, 'cost': 8873.9}, {'load': 86.0, 'cost': 3492.46}, {'load': 300.0, 'cost': 133500.0}]
+INFO: 127.0.0.1 - - [13/Oct/2021 16:27:55] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [13/Oct/2021 16:28:51] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[]'
+ERROR: Unable to distribute load. No solution found.
+INFO: 127.0.0.1 - - [13/Oct/2021 16:28:51] "[37mPOST /productionplan HTTP/1.1[0m" 200 -
+INFO: 127.0.0.1 - - [13/Oct/2021 16:29:00] "[37mOPTIONS /productionplan HTTP/1.1[0m" 200 -
+INFO: New POST request.
+INFO: Load is '721.0'. Available power range is '[[21.6, 21.6], [25.0, 30.0], [46.6, 60.0], [71.6, 90.0], [96.6, 111.6], [115.0, 120.0], [136.6, 150.0], [161.6, 180.0], [186.6, 201.6], [235.0, 245.0], [256.6, 275.0], [281.6, 2046.6]]'
+INFO: Found no straightforward solution, brute forcing.
+INFO: Solution total cost: 145866.36
+INFO: Solution details by cost tier: [{'load': 90.0, 'cost': 0.0}, {'load': 245.0, 'cost': 8873.9}, {'load': 86.0, 'cost': 3492.46}, {'load': 300.0, 'cost': 133500.0}]
+INFO: 127.0.0.1 - - [13/Oct/2021 16:29:00] "[37mPOST /productionplan HTTP/1.1[0m" 200 -

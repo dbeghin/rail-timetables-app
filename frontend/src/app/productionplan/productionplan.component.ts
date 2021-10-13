@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductionPlanApiService } from './productionplan-api.service';
 import { Payload, Powerplant, OptimiserOutput } from './payload.model';
-import { POWERPLANTS_DEFAULT } from '../default-powerplants';
+import { POWERPLANTS_TRICKY, POWERPLANTS_SIMPLE } from '../default-powerplants';
 
 @Component({
   selector: 'app-productionplan',
@@ -12,7 +12,7 @@ import { POWERPLANTS_DEFAULT } from '../default-powerplants';
 export class ProductionplanComponent implements OnInit {
   title = 'Production plan from payload';
   selectedPowerplant?: Powerplant;
-  powerplants:Powerplant[] = POWERPLANTS_DEFAULT;
+  powerplants:Powerplant[] = [];
   optimiseroutput?:OptimiserOutput;
   payload = new Payload();
   iCounter : number = 0;
@@ -24,6 +24,21 @@ export class ProductionplanComponent implements OnInit {
 
   onSelect(powerplant: Powerplant): void {
     this.selectedPowerplant = powerplant;
+  }
+
+  loadSimple() {
+    this.powerplants = POWERPLANTS_SIMPLE;
+    this.iCounter = 6;
+  }
+
+  loadTricky() {
+    this.powerplants = POWERPLANTS_TRICKY;
+    this.iCounter = 7;
+  }
+
+  clearPowerplants() {
+    this.powerplants = [];
+    this.iCounter = 0;
   }
 
   addPowerplant(type: string) {

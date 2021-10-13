@@ -1,5 +1,6 @@
 <h1>{{title}}</h1>
 
+<div class="global-width">
 <p>This is my solution to a coding challenge by Engie about finding the cheapest way
    to distribute a power load across different power plants, given constraints.
   Details can be found <a href="https://github.com/gem-spaas/powerplant-coding-challenge">here</a>.
@@ -11,13 +12,18 @@
 </p>
 
 <p>
-  Below that, you can create new power plants and edit them. Give each of them a unique name, and set
-  their type: 'gasfired' plants run on gas, 'turbojet' ones run on kerosine, and 'windturbine' plants
-  use wind, which is free. No other types are allowed.
+  Below that, you can create new power plants. You can load two example sets of power plants, one with a simple solution
+  and another with a trickier solution. The tricky solution is only interesting if you leave the default values of the load
+  and fuel inputs unmodified (you can reload the page to get them back).
+</p>
+
+<p>
+  There's a button to create each of the three kinds
+  of plants considered: gas, kerosine and wind. A default name is automatically given but can be changed.
 </p>
 
 <p> 
-  Also set the efficiency of each plant (0-1), lower numbers mean more expensive operation. Efficiency for
+  Set the efficiency of each plant (0-1), lower numbers mean more expensive operation. Efficiency for
   wind turbines should always be 1.
 </p>
 
@@ -33,6 +39,11 @@
 
 <p>
   See how the solution changes as you change the inputs. The app should always return you the cheapest solution, no matter how convoluted the situation.
+  The operating cost of a power plant is equal to the fuel price divided by the plant efficiency.
+  Wind is always free, while more expensive fuel and/or lower efficiency will make a gas/kerosine plant more expensive.
+  The code finds the cheapest <b>global</b> solution, which in some situations means foregoing the free wind power...
+</p>
+<p> 
   If no solution is possible, it will say so.
   If there is an error in the input format (e.g. unsupported plant type, min power > max power) it will also say so.
 </p>
@@ -66,6 +77,22 @@
   </div>
 
   <h2>Create power plants</h2>
+
+  <p>You can load one of two predefined sets of power plants:</p>
+  <ul>
+    <li>One <b>simple</b> example where the solution is straightforward.</li>
+    <li>One <b>tricky</b> example, where the cheapest solution involves turning off one wind plant despite its zero fuel cost.</li>
+  </ul>
+
+  <p>You can also clear all power plants.</p>
+
+  <div>
+    <button class="app-button" (click)="loadSimple()">Simple example</button>
+    &nbsp;
+    <button class="app-button" (click)="loadTricky()">Tricky example</button>
+    &nbsp;
+    <button class="app-button" (click)="clearPowerplants()"><br>Clear all</button>
+  </div>
 
   <p>Click below to create a new <b>gas</b>, <b>kerosine</b>, or <b>wind</b> power plant.</p>
   <div>
@@ -147,4 +174,6 @@
     </tr>
   </tbody>
 </table>
+</div>
+
 </div>
